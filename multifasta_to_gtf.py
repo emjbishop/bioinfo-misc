@@ -8,8 +8,8 @@ marker gene to the FASTA and GTF" docs:
 https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/using/tutorial_mr#marker
 '''
 
-in_multifasta = "/Users/emmabishop/Downloads/adding_vdj_genes_to_gex/not_in_gex_ref.fasta"
-out_gtf = "/Users/emmabishop/Downloads/adding_vdj_genes_to_gex/not_in_gex_ref.gtf"
+in_multifasta = "path/to/in.fasta"  # Input fasta or multifasta
+out_gtf = "path/to/out.gtf" # Desired output file
 
 with open(in_multifasta) as f:
 
@@ -21,7 +21,7 @@ with open(in_multifasta) as f:
         outline = '{gene}\tunknown\texon\t1\t{length}\t.\t+\t.\tgene_id "{gene}"; ' \
                'transcript_id "{gene}"; gene_name "{gene}"; ' \
                'gene_biotype "protein_coding";\n'.format(gene = gene, 
-                                                       length = length)
+                                                         length = length)
         
         # Append to output GTF
         with open(out_gtf, 'a') as outfile:
