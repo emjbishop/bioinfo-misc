@@ -25,7 +25,6 @@ with open(args.input) as f:
     # Will use this to count duplicate gene names. Default value is 0.
     seen = defaultdict(int)
 
-
     for fasta_record in SeqIO.parse(f, "fasta"):
         # Parse fasta/multifasta (my ids are just the gene names)
         seq = fasta_record.seq
