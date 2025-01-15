@@ -13,7 +13,7 @@ https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/l
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--input",
                     help="Input fasta or multifasta")
-parser.add_argument("-g", "--gtf",
+parser.add_argument("-o", "--output",
                     help="Output GTF")
 parser.add_argument("-f", "--fasta",
                     help="Output fasta/multifasta")
@@ -48,7 +48,7 @@ with open(args.input) as f:
                                                                length = length)
         
         # Append to output gtf
-        with open(args.gtf, 'a') as g:
+        with open(args.output, 'a') as g:
             g.write(gtf_record)
 
         # Output new multifasta with updated (e.g. TRAV5.2) gene names
